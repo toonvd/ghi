@@ -1591,6 +1591,8 @@ GitHub repository or by appending your command with the user/repo:
       def detect_repo
         remote   = remotes.find { |r| r[:remote] == 'upstream' }
         remote ||= remotes.find { |r| r[:remote] == 'origin' }
+        remote ||= remotes.find { |r| r[:remote] == 'github' }
+        remote ||= remotes.find { |r| r[:remote] == 'fork' }
         remote ||= remotes.find { |r| r[:user]   == Authorization.username }
         Command.detected_repo = true and remote[:repo] if remote
       end
