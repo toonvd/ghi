@@ -1943,7 +1943,7 @@ EOF
       def execute
         # TODO: Investigate whether or not this variable is needed
         global = true
-        
+
         options.parse! args.empty? ? %w(-h) : args
 
         if action == 'auth'
@@ -3104,7 +3104,7 @@ module GHI
           fallback.parse! e.args
           retry
         end
-        
+
         require_repo
         res = throb { api.get "/repos/#{repo}" }.body
 
