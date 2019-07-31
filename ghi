@@ -1,4 +1,4 @@
-#!/usr/bin/env ruby
+#!/usr/bin/ruby -W0
 # encoding: utf-8
 module GHI
   module Commands
