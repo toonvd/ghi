@@ -806,7 +806,7 @@ module GHI
       ERB.new(<<EOF).result binding
 <% p = i['pull_request']['html_url'] if i.key?('pull_request') %>\
 <%= bright { no_color { indent '%s%s: %s' % [p ? '↑' : '#', \
-*i.values_at('number', 'title')], 0, width } } %>
+*i.values_at('number', 'title')], 0, width } } %>   <%= i['html_url'] %>
 @<%= i['user']['login'] %> opened this <%= p ? 'pull request' : 'issue' %> \
 <%= format_date DateTime.parse(i['created_at']) %>. \
 <% if i['merged'] %><%= format_state 'merged', format_tag('merged'), :bg %><% end %> \
